@@ -4,30 +4,30 @@ from advertiser import Advertiser
 class Ad(BaseAdvertising):
 	"""docstring for Ad"""
 
-	__title__ = ""
-	__imgURL__ = ""
-	__link__ = ""
-	__theAdveriser__ = None
+	_title = ""
+	_imgURL = ""
+	_link = ""
+	_theAdveriser = None
 
 	def __init__(self, _id, title, imgURL, link, theAdvertiser, clicks = 0, views = 0):
 		super(Ad, self).__init__()
-		self.__id__ = _id
-		self.__title__ = title
-		self.__clicks__ = clicks
-		self.__views__ = views
-		self.__imgURL__ = imgURL
-		self.__link__ = link
-		self.__theAdveriser__ = theAdvertiser
+		self._id = _id
+		self._title = title
+		self._clicks = clicks
+		self._views = views
+		self._imgURL = imgURL
+		self._link = link
+		self._theAdveriser = theAdvertiser
 
 	def getTitle(self):
-		return self.__title__
+		return self._title
 
 	def setTitle(self, title):
-		self.__title__ = title
+		self._title = title
 
 	def incClicks(self):
-		self.__clicks__ += 1
-		self.__theAdveriser__.incClicks()
+		self._clicks += 1
+		self._theAdveriser.incClicks()
 
 	def describeMe(self):
 		return "Ad: Class containing ad info and functions needed for each ad"

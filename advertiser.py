@@ -3,23 +3,23 @@ from base_model import BaseAdvertising
 class Advertiser(BaseAdvertising):
 	"""docstring for Advertiser"""
 
-	__name__ = ""
-	__totalclicks__ = 0
+	_name = ""
+	_totalclicks = 0
 
 	def __init__(self, _id, name, clicks = 0, views = 0):
 		super(Advertiser, self).__init__()
-		self.__id__ = _id
-		self.__name__ = name
-		self.__clicks__ = clicks
-		self.__views__ = views
-		Advertiser.__totalclicks__ += clicks
+		self._id = _id
+		self._name = name
+		self._clicks = clicks
+		self._views = views
+		Advertiser._totalclicks += clicks
 
 
 	def getName(self):
-		return self.__name__
+		return self._name
 
 	def setName(self, name):
-		self.__name__ = name
+		self._name = name
 
 	@staticmethod
 	def help():
@@ -27,11 +27,11 @@ class Advertiser(BaseAdvertising):
 
 	@staticmethod
 	def getTotalClicks():
-		return Advertiser.__totalclicks__
+		return Advertiser._totalclicks
 
 	def incClicks(self):
-		self.__clicks__ += 1
-		Advertiser.__totalclicks__ += 1
+		self._clicks += 1
+		Advertiser._totalclicks += 1
 
 	def describeMe(self):
 		return "Advertiser: Class containing advertiser info and functions needed for each advertiser"
